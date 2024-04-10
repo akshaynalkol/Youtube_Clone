@@ -1,0 +1,40 @@
+.custom-style {
+    height: 89.8vh;
+    /* border: 1px solid; */
+    overflow: hidden;
+    position: fixed;
+    z-index: 999;
+}
+
+.custom-style:hover {
+    overflow-y: scroll;
+}
+
+.custom-style .list-group-item {
+    border: 0;
+    border-radius: 10px !important;
+}
+
+.list-group-item.active {
+    background-color: var(--grey1) !important;
+    color: black;
+    font-weight: 600;
+}
+
+.list-group-item:hover {
+    background-color: var(--grey1) !important;
+}
+
+.fs-small {
+    font-size: 10px;
+}
+
+/* @media screen and (max-width:992px) {
+    .custom-style {
+        width: 6%;
+    }
+
+    .custom-style span {
+        display: none;
+    }
+} */

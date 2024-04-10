@@ -1,0 +1,48 @@
+.searchDiv .input-group {
+    width: 60%;
+    margin: auto;
+}
+
+.searchDiv .suggestion {
+    width: 100%;
+    position: absolute;
+}
+
+.searchDiv .suggestion ul {
+    width: 53%;
+    margin: auto;
+    position: relative;
+    left: -35px;
+    background-color: white;
+}
+
+@media screen and (max-width:992px) {
+    .searchDiv .input-group{
+        width: 80% !important;
+    }
+
+    .searchDiv .suggestion ul {
+        width: 68%;
+    }
+}
+
+@media screen and (max-width:768px) {
+    .searchDiv .input-group{
+        width: 85% !important;
+    }
+
+    .searchDiv .suggestion ul {
+        width: 70%;
+    }
+}
+
+@media screen and (max-width:576px) {
+    .searchDiv .input-group{
+        width: 100% !important;
+    }
+
+    .searchDiv .suggestion ul {
+        width: 80%;
+        left: -25px;
+    }
+}
