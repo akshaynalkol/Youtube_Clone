@@ -5,7 +5,7 @@ import { useSelector } from 'react-redux';
 const Sidebar = () => {
     const isHomePage = useSelector((store) => store.app.isHomePage);
     const isMenuOpen = useSelector((store) => store.app.isMenuOpen);
-    console.log(isHomePage);
+    // console.log(isHomePage);
 
     // Early Return Pattern    
     // if (!isMenuOpen) return null;   

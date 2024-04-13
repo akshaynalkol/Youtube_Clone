@@ -1,9 +1,17 @@
-import React from 'react';
+import React, { useState } from 'react';
+import { setCategory } from '../utils/searchVideoSlice';
 
-const Buttton = ({ name }) => {
+const Buttton = ({ name, active, setActive, dispatch }) => {
     return (
         <>
-            <button className='btn btn-bg me-2'>{name}</button>
+            <button className={`btn me-2 ${active === name ? "bg-dark text-white" : "btn-bg"}`}
+                onClick={() => {
+                    setActive(name);
+                    dispatch(setCategory(name))
+                }}
+            >
+                {name}
+            </button>
         </>
     )
 }

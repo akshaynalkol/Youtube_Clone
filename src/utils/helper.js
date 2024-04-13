@@ -28,7 +28,6 @@ export default function generateRandomName() {
     return nameList[Math.floor(Math.random() * nameList.length)];
 }
 
-
 export function makeRandomMessage(length) {
     let result = '';
     const characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';

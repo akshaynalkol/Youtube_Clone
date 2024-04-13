@@ -1,7 +1,7 @@
 import React from 'react'
 
 const Comment = ({ comment }) => {
-    const { name, text, replies } = comment;
+    const { name, text} = comment;
     return (
         <div className='d-flex align-items-center mb-2'>
             <img src='/Images/UserLogo.svg' alt="User" height={35}/>

@@ -1,6 +1,5 @@
 .custom-style {
     height: 89.8vh;
-    /* border: 1px solid; */
     overflow: hidden;
     position: fixed;
     z-index: 999;
@@ -28,13 +27,3 @@
 .fs-small {
     font-size: 10px;
 }
-
-/* @media screen and (max-width:992px) {
-    .custom-style {
-        width: 6%;
-    }
-
-    .custom-style span {
-        display: none;
-    }
-} */

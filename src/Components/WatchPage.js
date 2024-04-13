@@ -1,22 +1,22 @@
 import React, { useEffect, useState } from 'react';
+import { useSearchParams } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
 import { closeMenu } from '../utils/appSlice';
-import { useSearchParams } from 'react-router-dom';
-import { YOUTUBE_SINGLE_VIDEO_API, YOUTUBE_VIDEO_API } from '../utils/Contants';
-import CommentsContainer from './CommentsContainer';
+import { YOUTUBE_SINGLE_VIDEO_API } from '../utils/Contants';
 import LiveChat from './LiveChat';
+import CommentsContainer from './CommentsContainer';
 import VideoDescription from './VideoDescription';
 
 const WatchPage = () => {
+    const dispatch = useDispatch();
     const [video, setVideo] = useState();
     const [searchParams, setSearchParams] = useSearchParams();
     // console.log(searchParams);
     // console.log(searchParams.get("v"));
-
-    const dispatch = useDispatch();
+    const videoId = searchParams.get("v");
 
     const getData = async () => {
-        let res = await fetch(YOUTUBE_SINGLE_VIDEO_API + searchParams.get("v"));
+        let res = await fetch(YOUTUBE_SINGLE_VIDEO_API + videoId);
         let data = await res.json();
         // console.log(data.items[0]);
         setVideo(data.items[0])
@@ -34,9 +34,8 @@ const WatchPage = () => {
                 <iframe
                     width="560"
                     height="460"
-                    src={"https://www.youtube.com/embed/" + searchParams.get("v")}
+                    src={`https://www.youtube.com/embed/${videoId}?&autoplay=1`}
                     title="YouTube video player"
-                    frameBorder="0"
                     allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                     referrerPolicy="strict-origin-when-cross-origin"
                     allowFullScreen
@@ -45,7 +44,6 @@ const WatchPage = () => {
                 <div className='mt-3 mb-4 d-block d-xl-none'>
                     <LiveChat />
                 </div>
-                {/* <LiveChat /> */}
                 {
                     video &&
                     <>
